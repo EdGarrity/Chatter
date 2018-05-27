@@ -13,7 +13,9 @@
   [messages]
   (page/html5
    [:head
-    [:title "chatter"]]
+    [:title "chatter"]
+    (page/include-css "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    (page/include-js  "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")]
    [:body
     [:h1 "Our Chat App"]
     [:p
@@ -23,7 +25,7 @@
       "Message: " (form/text-field "msg")
       (form/submit-button "Submit"))]
     [:p
-     [:table
+     [:table#messages.table
       (map (fn [m] [:tr [:td (:name m)] [:td (:message m)]]) messages)]]]))
 
 (defn update-messages!
