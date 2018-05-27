@@ -25,7 +25,7 @@
       "Message: " (form/text-field "msg")
       (form/submit-button "Submit"))]
     [:p
-     [:table#messages.table
+     [:table#messages.table.table-striped
       (map (fn [m] [:tr [:td (:name m)] [:td (:message m)]]) messages)]]]))
 
 (defn update-messages!
